@@ -494,3 +494,137 @@ html {
   color: rgb(18, 122, 240);
   font-style: italic;
 }
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.modal.open {
+  display: flex;
+}
+
+.modal-container {
+  width: 900px;
+  max-width: calc(100% - 32px);
+  min-height: 200px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  animation: modalFadeIn ease .5s;
+}
+
+
+
+.modal-header {
+  background-color: #009688;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: #fff;
+}
+
+.bag-to-buy {
+  margin-right: 16px;
+}
+
+.modal-close:hover {
+  opacity: 1;
+  background-color: #ccc;
+  color: #f00;
+}
+
+.modal-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #fff;
+  padding: 16px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: linear .1s;
+}
+
+.modal-close:hover {
+  opacity: 1;
+}
+
+.modal-body {
+  padding: 16px;
+}
+
+.ticket-cost {
+  color: #f00;
+}
+
+.modal-label {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.modal-input {
+  border: 1px solid #ccc;
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  margin-bottom: 24px;
+  outline: navajowhite;
+}
+
+#buy-tickets:hover {
+  opacity: 0.9;
+}
+
+#buy-tickets {
+  background: #099688;
+  border: none;
+  width: 100%;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 15px;
+  padding: 16px;
+  cursor: pointer;
+}
+.modal-footer {
+  padding: 16px;
+  text-align: right;
+}
+
+.modal-footer a {
+  color: #2196f3;
+}
+
+@keyframes modalFadeIn {
+  from {
+    transform: translateY(-120%);
+    opacity: 0.5;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes modalFadeOut {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0.5;
+  }
+}
