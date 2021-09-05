@@ -109,7 +109,7 @@
               <div class="place-body">
                 <h3 class="place-heading">Paris</h3>
                 <p class="place-time">Friday 27 November 2015</p>
-                <a href="#" class="btn s-full-width">Buy ticket</a>
+                <button class="btn s-full-width js-but-ticket">Buy ticket</button>
               </div>
             </div>
 
@@ -118,7 +118,7 @@
               <div class="place-body">
                 <h3 class="place-heading">New York</h3>
                 <p class="place-time">Saturday 28 November 2015</p>
-                <a href="#" class="btn s-full-width">Buy ticket</a>
+                <button class="btn s-full-width js-but-ticket">Buy ticket</button>
               </div>
             </div>
 
@@ -127,7 +127,7 @@
               <div class="place-body">
                 <h3 class="place-heading">San Francisco</h3>
                 <p class="place-time">Sunday 29 November 2015</p>
-                <a href="#" class="btn s-full-width">Buy ticket</a>
+                <button class="btn s-full-width js-but-ticket">Buy ticket</button>
               </div>
             </div>
 
@@ -161,7 +161,7 @@
 
               <div class="row mt-8"> 
                 <div class="col col-full"><!-- 1/4-->
-                  <!-- <input type="text" class="form-control" placeholder="Message"> -->
+                  <!-- <input type="text" class="form-control" placeholder=" sage"> -->
                   <textarea class="form-control" id="comments" name="messenge" placeholder="Messenge"
                     rows="5"></textarea>
                 </div>
@@ -189,6 +189,41 @@
         <a href=""><i class="ti-youtube"></i></a>
       </div>
       <p class="copy-right">@2021 Made by Naw, copy rom <a href="https://www.w3schools.com/">w3schools</a></p>
+    </div>
+    <div class="modal">
+      <div class="modal-container">
+        <div class="modal-close">
+          <i class="ti-close"></i>
+        </div>
+
+        <header class="modal-header">
+            <i class="bag-to-buy ti-bag"></i>
+            Tickets
+        </header>
+
+        <div class="modal-body">
+          <label for="ticket-quantity" class="modal-label">
+            <i class="ti-shopping-cart"></i>
+            Tickets, <span class="ticket-cost">$15</span> per person
+          </label>
+          <input id="ticket-quantity" required type="text" class="modal-input" placeholder="How many?">
+
+          <label for="ticket-email" class="modal-label">
+            <i class="ti-user"></i>
+            Send to
+          </label>
+          <input id="ticket-email" required type="email" class="modal-input" placeholder="Enter email..."> 
+
+          <button id="buy-tickets">
+            Pay<i class="ti-check"></i>
+          </button>
+        </div>
+
+        <footer class="modal-footer">
+          <div class="modal-help">Need <a href="">help?</a></div>
+        </footer>
+
+      </div>
     </div>
   </div>
 
@@ -228,6 +263,32 @@
       }
     }
 
+  </script>
+  <script>
+    const buyBtns = document.querySelectorAll('.js-but-ticket')
+    const modal = document.querySelector('.modal')
+    const modalContainer = document.querySelector('.modal-container')
+    const close = document.querySelector('.modal-close')
+
+    function showBuyTickets () {
+        modal.classList.add('open')
+    }
+
+    function hideBuyTickets () {
+      modal.classList.remove('open')
+    }
+
+    for(var buyBtn of buyBtns) {
+      buyBtn.addEventListener('click',showBuyTickets)
+    }
+
+    close.addEventListener('click',hideBuyTickets)
+
+    modal.addEventListener('click',hideBuyTickets)
+
+    modalContainer.addEventListener('click',function (e) {
+        e.stopPropagation();
+    })
   </script>
 </body>
 </html>
