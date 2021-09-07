@@ -190,7 +190,7 @@
       </div>
       <p class="copy-right">@2021 Made by Naw, copy rom <a href="https://www.w3schools.com/">w3schools</a></p>
     </div>
-    <div class="modal">
+      <div class="modal"></div>
       <div class="modal-container">
         <div class="modal-close">
           <i class="ti-close"></i>
@@ -204,7 +204,7 @@
         <div class="modal-body">
           <label for="ticket-quantity" class="modal-label">
             <i class="ti-shopping-cart"></i>
-            Tickets, <span class="ticket-cost">$15</span> per person
+            Tickets, <span class="ticket-cost">$23</span> per person
           </label>
           <input id="ticket-quantity" required type="text" class="modal-input" placeholder="How many?">
 
@@ -224,7 +224,7 @@
         </footer>
 
       </div>
-    </div>
+    
   </div>
 
   <script>
@@ -271,10 +271,12 @@
     const close = document.querySelector('.modal-close')
 
     function showBuyTickets () {
-        modal.classList.add('open')
+      modalContainer.classList.add('open')
+      modal.classList.add('open')
     }
 
     function hideBuyTickets () {
+      modalContainer.classList.remove('open')
       modal.classList.remove('open')
     }
 
@@ -286,9 +288,9 @@
 
     modal.addEventListener('click',hideBuyTickets)
 
-    modalContainer.addEventListener('click',function (e) {
-        e.stopPropagation();
-    })
+    // modalContainer.addEventListener('click',function (e) {
+    //     e.stopPropagation();
+    // })
   </script>
 </body>
 </html>
